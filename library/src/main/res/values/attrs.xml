@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TabButton">
+        <attr name="tab_icon" format="reference" />
+        <attr name="tab_icon_unselected" format="reference" />
+        <attr name="tab_text" format="string" />
+        <attr name="tab_icon_size" format="dimension" />
+        <attr name="tab_text_size" format="dimension" />
+        <attr name="tab_text_size_unselected" format="dimension" />
+        <attr name="tab_text_color" format="color" />
+        <attr name="tab_text_color_unselected" format="color" />
+        <attr name="tab_selected" format="boolean" />
+        <attr name="tab_reverse" format="boolean" />
+        <attr name="tab_drawable_margin" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="TabGroup">
+        <attr name="tab_selected_color" format="color" />
+        <attr name="tab_unselected_color" format="color" />
+    </declare-styleable>
+</resources>
