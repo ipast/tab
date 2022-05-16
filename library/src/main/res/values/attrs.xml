@@ -13,6 +13,7 @@
         <attr name="tab_selected" format="boolean" />
         <attr name="tab_reverse" format="boolean" />
         <attr name="tab_drawable_margin" format="dimension" />
+        <attr name="tab_show_text" format="boolean" />
     </declare-styleable>
     <declare-styleable name="TabGroup">
         <attr name="tab_selected_color" format="color" />

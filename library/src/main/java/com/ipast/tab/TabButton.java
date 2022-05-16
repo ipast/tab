@@ -31,6 +31,7 @@ public class TabButton extends LinearLayout {
     private ImageView mImageView;
     private TextView mTextView;
     private boolean reverse;
+    private boolean showText;
 
     public TabButton(Context context) {
         this(context, null);
@@ -55,6 +56,7 @@ public class TabButton extends LinearLayout {
         mDrawableMargin = (int) ta.getDimension(R.styleable.TabButton_tab_drawable_margin, 3);
         mSelected = ta.getBoolean(R.styleable.TabButton_tab_selected, false);
         reverse = ta.getBoolean(R.styleable.TabButton_tab_reverse, false);
+        showText=ta.getBoolean(R.styleable.TabButton_tab_show_text,true);
         ta.recycle();
     }
 
@@ -87,13 +89,14 @@ public class TabButton extends LinearLayout {
         }
         mImageView = new ImageView(getContext());
         mImageView.setLayoutParams(params1);
-
-        mTextView = new TextView(getContext());
-        mTextView.setLayoutParams(params2);
-        mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
-        TextPaint tp = mTextView.getPaint();
-        tp.setFakeBoldText(true);
-        mTextView.setText(mText);
+        if (showText){
+            mTextView = new TextView(getContext());
+            mTextView.setLayoutParams(params2);
+            mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+            TextPaint tp = mTextView.getPaint();
+            tp.setFakeBoldText(true);
+            mTextView.setText(mText);
+        }
 
         if (mSelected) {
             mImageView.setImageResource(mDrawable);
@@ -106,10 +109,15 @@ public class TabButton extends LinearLayout {
         }
         if (!reverse) {
             addView(mImageView);
-            addView(mTextView);
+            if (showText){
+                addView(mTextView);
+            }
+
         } else {
             addView(mTextView);
-            addView(mImageView);
+            if (showText){
+                addView(mTextView);
+            }
         }
 
     }
