@@ -100,12 +100,18 @@ public class TabButton extends LinearLayout {
 
         if (mSelected) {
             mImageView.setImageResource(mDrawable);
-            mTextView.setTextColor(mTextColor);
-            mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+            if (showText){
+                mTextView.setTextColor(mTextColor);
+                mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+            }
+
         } else {
             mImageView.setImageResource(mUnSelectedDrawable);
-            mTextView.setTextColor(mTextColorUnSelected);
-            mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSizeUnSelected);
+            if (showText){
+                mTextView.setTextColor(mTextColorUnSelected);
+                mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSizeUnSelected);
+            }
+
         }
         if (!reverse) {
             addView(mImageView);
@@ -125,12 +131,18 @@ public class TabButton extends LinearLayout {
     public void setSelected(boolean selected) {
         if (selected) {
             mImageView.setImageResource(mDrawable);
-            mTextView.setTextColor(mTextColor);
-            mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+            if (showText){
+                mTextView.setTextColor(mTextColor);
+                mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+            }
+
         } else {
             mImageView.setImageResource(mUnSelectedDrawable);
-            mTextView.setTextColor(mTextColorUnSelected);
-            mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSizeUnSelected);
+            if (showText){
+                mTextView.setTextColor(mTextColorUnSelected);
+                mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSizeUnSelected);
+            }
+
         }
     }
 
