@@ -114,10 +114,10 @@ public class TabButton extends LinearLayout {
             }
 
         } else {
-            addView(mTextView);
             if (showText){
                 addView(mTextView);
             }
+            addView(mImageView);
         }
 
     }
